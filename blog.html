@@ -11,6 +11,74 @@
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/cards.css">
     <link rel="stylesheet" href="css/blog.css">
+    <style>
+        /* ── Pagination End-of-Content Modal ── */
+        #blog-pagination-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(10, 22, 40, 0.55);
+            backdrop-filter: blur(3px);
+            align-items: center;
+            justify-content: center;
+        }
+        #blog-pagination-modal.show {
+            display: flex;
+        }
+        .bpm-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(10, 22, 40, 0.18);
+            width: 100%;
+            max-width: 420px;
+            margin: 16px;
+            padding: 36px 32px 28px;
+            position: relative;
+            text-align: center;
+            animation: bpmSlideIn 0.25s ease;
+        }
+        @keyframes bpmSlideIn {
+            from { opacity: 0; transform: translateY(-18px) scale(0.97); }
+            to   { opacity: 1; transform: translateY(0)   scale(1);    }
+        }
+        .bpm-close {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            color: #6b7280;
+            cursor: pointer;
+            line-height: 1;
+            padding: 4px 8px;
+            border-radius: 6px;
+            transition: background 0.15s, color 0.15s;
+        }
+        .bpm-close:hover { background: #f3f4f6; color: #111827; }
+        .bpm-icon {
+            font-size: 3rem;
+            color: #6b7280;
+            margin-bottom: 16px;
+        }
+        .bpm-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+        .bpm-sub {
+            font-size: 0.92rem;
+            color: #6b7280;
+            margin-bottom: 6px;
+        }
+        .bpm-coming {
+            font-size: 0.85rem;
+            color: #9ca3af;
+            font-style: italic;
+        }
+    </style>
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/utilities.css">
@@ -145,9 +213,20 @@
                         <div class="pagination">
                             <span class="disabled">&laquo;</span>
                             <span class="active">1</span>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
-                            <a href="#">&raquo;</a>
+                            <button class="pagination-more" type="button">2</button>
+                            <button class="pagination-more" type="button">3</button>
+                            <button class="pagination-more" type="button">&raquo;</button>
+                        </div>
+
+                        <!-- End-of-content modal -->
+                        <div id="blog-pagination-modal" role="dialog" aria-modal="true" aria-labelledby="bpm-title">
+                            <div class="bpm-card">
+                                <button class="bpm-close" id="bpm-close-btn" aria-label="Close">&times;</button>
+                                <div class="bpm-icon"><i class="far fa-file-alt"></i></div>
+                                <div class="bpm-title" id="bpm-title">You&rsquo;ve caught up!</div>
+                                <p class="bpm-sub">You&rsquo;ve seen all the blog posts available right now.</p>
+                                <p class="bpm-coming">More content coming soon.</p>
+                            </div>
                         </div>
                     </div>
 
@@ -194,6 +273,7 @@
 
     <script>
     (function() {
+        // ── Category filter ──
         var categories = document.querySelectorAll('.sidebar-widget ul li a[data-category]');
         var cards = document.querySelectorAll('.blog-main .blog-card');
         var emptyMsg = document.querySelector('.no-posts-message');
@@ -245,6 +325,32 @@
 
         updateCounts();
         filter('all');
+
+        // ── Pagination end-of-content modal ──
+        var modal   = document.getElementById('blog-pagination-modal');
+        var closeBtn = document.getElementById('bpm-close-btn');
+
+        function openModal() { modal.classList.add('show'); }
+        function closeModal() { modal.classList.remove('show'); }
+
+        document.querySelectorAll('.pagination-more').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal();
+            });
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+
+        // Close on backdrop click
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) closeModal();
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
     })();
     </script>
 
