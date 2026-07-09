@@ -279,6 +279,8 @@
 
 /* Feature Card (for departments, services, etc.) */
 .feature-card {
+    display: flex;
+    flex-direction: column;
     padding: 32px 24px;
     background-color: #ffffff;
     border-radius: 8px;
@@ -286,6 +288,7 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     border: 1px solid #f3f4f6;
 }
+    
 
 .feature-card .feature-icon {
     /* ISSUE (Beginner): icon sizes inconsistent — some pages use 48px, others 56px or 40px */
@@ -309,6 +312,11 @@
     font-size: 0.9rem;
     color: #6b7280;
     line-height: 1.5;
+    flex-grow: 1;
+}
+.feature-card .btn {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 /* Award Card */
