@@ -5,8 +5,7 @@
 /* Base card */
 .card {
     background-color: var(--card-bg);
-    /* ISSUE (Beginner): border-radius inconsistent — .card is 8px, movie-card is 12px, blog-card is 4px */
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--card-shadow);
     border: 1px solid var(--card-border);
@@ -20,7 +19,6 @@
 
 .card-img {
     width: 100%;
-    /* ISSUE (Beginner): fixed height causes aspect ratio issues */
     height: 200px;
     object-fit: cover;
 }
@@ -39,8 +37,7 @@
 .card-text {
     font-size: 0.95rem;
     color: var(--text-secondary);
-    /* ISSUE (Beginner): line-height 1.4 here but global sets 1.6 */
-    line-height: 1.4;
+    line-height: 1.6;
 }
 
 .card-meta {
@@ -96,8 +93,7 @@
 }
 
 .movie-card .card-body {
-    /* ISSUE (Beginner): padding different from base .card — 16px vs 20px */
-    padding: 16px;
+    padding: 20px;
 }
 
 .movie-card .card-title {
@@ -127,11 +123,9 @@
 /* Blog Card */
 .blog-card {
     background-color: var(--card-bg);
-    /* ISSUE (Beginner): border-radius 4px — different from .card (8px) and .movie-card (12px) */
-    border-radius: 4px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--card-shadow);
-    /* ISSUE (Beginner): has border, unlike other cards */
     border: 1px solid var(--card-border);
     transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -217,19 +211,23 @@
 
 /* Product Card */
 .product-card {
+    display: flex;
+    flex-direction: column;
     background-color: var(--card-bg);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--card-shadow);
     border: 1px solid var(--card-border);
 }
-
 .product-card .card-img {
     height: 220px;
-    /* ISSUE (Beginner): object-fit missing — images may stretch */
+    object-fit: cover;
 }
 
 .product-card .card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     padding: 16px;
 }
 
@@ -253,6 +251,9 @@
     font-weight: 400;
     font-size: 0.9rem;
     margin-left: 8px;
+}
+.product-card .btn {
+    margin-top: auto;
 }
 
 /* Character Card */
@@ -295,9 +296,21 @@
     box-shadow: var(--card-shadow);
     border: 1px solid var(--card-border);
 }
+.reports-grid .feature-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.reports-grid .feature-card p {
+    flex-grow: 1;
+}
+
+.reports-grid .feature-card .btn {
+    margin-top: auto;
+}
+    
 
 .feature-card .feature-icon {
-    /* ISSUE (Beginner): icon sizes inconsistent — some pages use 48px, others 56px or 40px */
     width: 48px;
     height: 48px;
     margin: 0 auto 16px;
@@ -319,6 +332,11 @@
     font-size: 0.9rem;
     color: var(--text-secondary);
     line-height: 1.5;
+    flex-grow: 1;
+}
+.feature-card .btn {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 /* Award Card */
@@ -466,6 +484,3 @@
     font-size: 0.8rem;
     color: var(--text-muted);
 }
-
-/* ISSUE (Intermediate): card-grid doesn't switch to single column on small screens —
-   relies on responsive.css which has different breakpoint */

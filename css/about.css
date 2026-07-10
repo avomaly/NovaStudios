@@ -38,9 +38,8 @@
 }
 
 .value-item .value-icon {
-    /* ISSUE (Beginner): icon size 56px here but feature-card uses 48px — inconsistent */
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background-color: var(--bg-tertiary);
     color: var(--text-primary);
@@ -92,15 +91,15 @@
     gap: 32px;
 }
 
-/* ISSUE (Beginner): Team cards in leadership have different heights 
-   because bio text varies in length and cards don't stretch equally */
-
 .leader-card {
     background: var(--card-bg);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--card-shadow);
     border: 1px solid var(--card-border);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .leader-card .leader-photo {
@@ -110,6 +109,7 @@
 
 .leader-card .leader-info {
     padding: 20px;
+    flex: 1;
 }
 
 .leader-card h3 {

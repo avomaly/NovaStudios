@@ -107,6 +107,8 @@
     gap: 24px;
     overflow-x: auto;
     padding-bottom: 16px;
+    width: 100%;
+    max-width: 100%;
 }
 
 .releases-row .movie-card {
