@@ -202,6 +202,8 @@
 
 /* Product Card */
 .product-card {
+    display: flex;
+    flex-direction: column;
     background-color: #ffffff;
     border-radius: 8px;
     overflow: hidden;
@@ -213,6 +215,9 @@
 }
 
 .product-card .card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     padding: 16px;
 }
 
@@ -236,6 +241,9 @@
     font-weight: 400;
     font-size: 0.9rem;
     margin-left: 8px;
+}
+.product-card .btn {
+    margin-top: auto;
 }
 
 /* Character Card */
@@ -274,9 +282,22 @@
     background-color: #ffffff;
     border-radius: 8px;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     border: 1px solid #f3f4f6;
 }
+.reports-grid .feature-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.reports-grid .feature-card p {
+    flex-grow: 1;
+}
+
+.reports-grid .feature-card .btn {
+    margin-top: auto;
+}
+    
 
 .feature-card .feature-icon {
     width: 48px;
@@ -299,6 +320,11 @@
     font-size: 0.9rem;
     color: #6b7280;
     line-height: 1.5;
+    flex-grow: 1;
+}
+.feature-card .btn {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 /* Award Card */
