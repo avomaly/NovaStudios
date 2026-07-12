@@ -1,0 +1,172 @@
+/* ============================================
+   Nova Studios — Hero Banners
+   ============================================ */
+
+.hero {
+    position: relative;
+    padding: 80px 0;
+    background-color: var(--bg-primary-dark-override);
+    color: #ffffff;
+    overflow: hidden;
+    --text-primary: #ffffff;
+    --text-secondary: #cbd5e1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    color: var(--text-primary);
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 24px;
+}
+
+.hero .btn-group {
+    margin-top: 8px;
+}
+
+/* Hero Large — for home page */
+.hero-large {
+    padding: 120px 0;
+    text-align: center;
+    background: linear-gradient(135deg, var(--navbar-bg) 0%, var(--bg-secondary) 50%, var(--bg-primary-dark-override) 100%);
+}
+
+[data-theme="dark"] .hero-large {
+    background: linear-gradient(135deg, var(--navbar-bg) 0%, var(--bg-primary) 100%);
+}
+
+.hero-large h1 {
+    font-size: 3.5rem;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.hero-large p {
+    max-width: 650px;
+    margin: 0 auto 32px;
+    font-size: 1.25rem;
+}
+
+.hero-large .btn-group {
+    justify-content: center;
+}
+
+/* Hero with background image placeholder */
+.hero-bg {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    position: relative;
+}
+
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.6) 100%);
+    z-index: 1;
+}
+
+.hero-bg .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-about {
+    min-height: 350px;
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Hero split — two column hero */
+.hero-split {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    background-color: var(--bg-secondary);
+}
+
+.hero-split .hero-content {
+    flex: 1;
+    padding: 80px 60px;
+    --text-primary: var(--text-primary);
+    --text-secondary: var(--text-secondary);
+    color: var(--text-primary);
+}
+
+.hero-split .hero-content h1 {
+    color: var(--text-primary);
+}
+
+.hero-split .hero-content p {
+    color: var(--text-secondary);
+}
+
+.hero-split .hero-image {
+    flex: 1;
+    min-height: 500px;
+}
+
+/* Hero gradient variants */
+.hero-gradient-blue {
+    background: linear-gradient(135deg, #1e3a5f 0%, var(--bg-primary-dark-override) 100%);
+}
+
+.hero-gradient-warm {
+    background: linear-gradient(135deg, #1a1628 0%, #2d1810 100%);
+}
+
+.hero-gradient-dark {
+    background: linear-gradient(180deg, var(--navbar-bg) 0%, var(--bg-primary-dark-override) 100%);
+}
+
+.hero-compact {
+    padding: 50px 0;
+    min-height: auto;
+}
+
+.hero-compact h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.hero-compact p {
+    font-size: 1rem;
+}
+
+/* Hero decorative elements */
+.hero-decoration {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(245, 158, 11, 0.08);
+    z-index: 0;
+}
+
+.hero-decoration.top-right {
+    top: -100px;
+    right: -100px;
+}
+
+.hero-decoration.bottom-left {
+    bottom: -150px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+}

@@ -1,0 +1,182 @@
+/* ============================================
+   Nova Studios — Footer
+   ============================================ */
+
+.site-footer {
+    margin-top: 50px;
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 60px 0 0;
+    font-size: 0.95rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-col h3 {
+    color: var(--footer-title);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-col p {
+    color: var(--footer-text);
+    line-height: 1.7;
+    font-size: 0.9rem;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: var(--footer-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+    color: #f59e0b;
+}
+
+.footer-brand {
+    margin-bottom: 16px;
+}
+
+.footer-brand .logo-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--footer-title);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.footer-brand .logo-accent {
+    color: #f59e0b;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.1);
+    color: var(--footer-text);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transition: background-color 0.2s;
+}
+
+.footer-social a:hover {
+    background-color: #f59e0b;
+    color: #0a1628;
+}
+
+/* Newsletter in footer */
+.footer-newsletter {
+    margin-top: 20px;
+}
+
+.footer-newsletter p {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+
+.footer-newsletter .newsletter-form {
+    display: flex;
+    gap: 0;
+}
+
+.footer-newsletter input[type="email"] {
+    padding: 8px 12px;
+    border: 1px solid var(--input-border);
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border-radius: 4px 0 0 4px;
+    font-size: 0.85rem;
+    flex: 1;
+    outline: none;
+}
+
+.footer-newsletter input[type="email"]::placeholder {
+    color: var(--input-placeholder);
+}
+
+.footer-newsletter button {
+    padding: 8px 16px;
+    background-color: #f59e0b;
+    color: #0a1628;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.footer-newsletter button:hover {
+    background-color: #d97706;
+}
+
+/* Footer bottom */
+.footer-bottom {
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.footer-bottom-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 8px;
+}
+
+.footer-bottom-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.footer-bottom-links a:hover {
+    color: #f59e0b;
+}
+
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}

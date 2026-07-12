@@ -1,0 +1,137 @@
+/* ============================================
+   Nova Studios — Buttons
+   ============================================ */
+
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--link-color);
+    color: #ffffff;
+    border-color: var(--link-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--link-hover-color);
+    border-color: var(--link-hover-color);
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--btn-secondary-text);
+    border-color: var(--btn-secondary-border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--btn-secondary-text);
+    color: var(--bg-primary);
+    text-decoration: none;
+}
+
+.btn-accent {
+    background-color: #f59e0b;
+    color: #0a1628;
+    border-color: #f59e0b;
+}
+
+.btn-accent:hover {
+    background-color: #d97706;
+    border-color: #d97706;
+    text-decoration: none;
+}
+
+.btn-dark {
+    background-color: var(--btn-dark-bg);
+    color: var(--btn-dark-text);
+    border-color: var(--btn-dark-bg);
+}
+
+.btn-dark:hover {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.btn-light {
+    background-color: var(--btn-light-bg);
+    color: var(--btn-light-text);
+    border-color: var(--btn-light-bg);
+}
+
+.btn-light:hover {
+    background-color: var(--bg-tertiary);
+    text-decoration: none;
+}
+
+.btn-disabled {
+    background-color: #e5e7eb;
+    color: #6b7280;
+    border-color: #d1d5db;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Size variants */
+.btn-sm {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+}
+
+.btn-lg {
+    padding: 16px 40px;
+    font-size: 1.15rem;
+}
+
+/* Keyboard accessibility button focus indicator */
+.btn:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Ghost button */
+.btn-ghost {
+    background: none;
+    border: none;
+    color: var(--btn-ghost-text);
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.btn-ghost:hover {
+    text-decoration: underline;
+}
+
+/* Button group */
+.btn-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Dark section button overrides */
+.section-dark .btn-primary {
+    background-color: #f59e0b;
+    color: #0a1628;
+    border-color: #f59e0b;
+}
+
+.section-dark .btn-primary:hover {
+    background-color: #d97706;
+    border-color: #d97706;
+}

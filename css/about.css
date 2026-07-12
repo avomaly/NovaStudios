@@ -1,0 +1,156 @@
+/* ============================================
+   Nova Studios — About, History, Leadership
+   ============================================ */
+
+/* About page */
+.about-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.about-intro .about-text h2 {
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.about-intro .about-text p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.about-image {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Values grid */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.value-item {
+    text-align: center;
+    padding: 32px 24px;
+}
+
+.value-item .value-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.value-item h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-primary);
+}
+
+.value-item p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Milestones/stats */
+.milestones-row {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.milestone-item .milestone-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #f59e0b;
+    line-height: 1;
+}
+
+.milestone-item .milestone-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+}
+
+/* Leadership team grid */
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.leader-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.leader-card .leader-photo {
+    width: 100%;
+    height: 280px;
+}
+
+.leader-card .leader-info {
+    padding: 20px;
+    flex: 1;
+}
+
+.leader-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-primary);
+}
+
+.leader-card .leader-title {
+    font-size: 0.85rem;
+    color: var(--link-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.leader-card .leader-bio {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Quote/Mission section */
+.mission-quote {
+    text-align: center;
+    padding: 60px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mission-quote blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.mission-quote cite {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-style: normal;
+}

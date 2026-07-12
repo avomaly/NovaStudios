@@ -1,0 +1,164 @@
+/* ============================================
+   Nova Studios — Careers & Departments
+   ============================================ */
+
+/* Job listings */
+.job-listing {
+    padding: 24px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: box-shadow 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+.job-listing:hover {
+    box-shadow: var(--card-shadow-hover);
+}
+
+.job-listing .job-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-primary);
+}
+
+.job-listing .job-info .job-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.job-listing .job-info .job-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Benefits grid */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.benefit-item {
+    text-align: center;
+    padding: 24px 16px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+}
+
+.benefit-item .benefit-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: var(--bg-tertiary);
+    color: var(--link-color);
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.benefit-item h4 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+}
+
+.benefit-item p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* Department cards */
+.dept-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.dept-card {
+    padding: 32px 24px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    border-top: 4px solid #f59e0b;
+}
+
+.dept-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-primary);
+}
+
+.dept-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.dept-card .dept-count {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Career steps */
+.career-steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    counter-reset: step;
+}
+
+.career-step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.career-step::before {
+    counter-increment: step;
+    content: counter(step);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--bg-primary-dark-override);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 0 auto 16px;
+}
+
+.career-step h4 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+}
+
+.career-step p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Testimonial section — employee quotes */
+.employee-testimonials {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}

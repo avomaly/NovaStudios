@@ -1,0 +1,276 @@
+/* ============================================
+   Nova Studios — Responsive
+   Breakpoints are unified across files to 768px.
+   ============================================ */
+
+/* Large screens */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 24px;
+    }
+
+    .card-grid-4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .hero-large h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-large p {
+        font-size: 1.1rem;
+    }
+
+    .featured-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .about-intro {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .movie-detail-header {
+        grid-template-columns: 250px 1fr;
+        gap: 24px;
+    }
+
+    .cast-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .blog-layout,
+    .blog-post-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-sidebar {
+        position: static;
+    }
+
+    .career-steps {
+        flex-wrap: wrap;
+    }
+
+    .career-step {
+        flex: 0 0 calc(50% - 12px);
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .leadership-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dept-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero-split {
+        flex-direction: column;
+    }
+
+    .hero-split .hero-content {
+        padding: 48px 24px;
+    }
+
+    .hero-split .hero-image {
+        min-height: 300px;
+    }
+
+    .movie-detail-header {
+        grid-template-columns: 1fr;
+    }
+
+    .milestones-row {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .milestones-row .milestone-item {
+        flex: 0 0 calc(50% - 12px);
+    }
+
+    .employee-testimonials {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-card.featured {
+        transform: none;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    body {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .hero {
+        padding: 48px 0;
+    }
+
+    .hero-large {
+        padding: 60px 0;
+    }
+
+    .hero-large h1 {
+        font-size: 1.8rem;
+    }
+
+    .card-grid,
+    .card-grid-4,
+    .card-grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .leadership-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dept-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cast-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .career-step {
+        flex: 0 0 100%;
+    }
+
+    .blog-featured {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-bar {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .job-listing {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .episode-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .episode-thumb {
+        width: 100%;
+        height: auto;
+    }
+
+    .newsletter-form-large {
+        flex-direction: column;
+    }
+
+    .newsletter-form-large input,
+    .newsletter-form-large button {
+        border-radius: 8px;
+    }
+
+    .pagination a,
+    .pagination span {
+        width: 36px;
+        height: 36px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .navbar, .site-footer, .promo-banner {
+        display: none;
+    }
+
+    body {
+        color: #000000;
+        background: #ffffff;
+    }
+
+    /* No other print optimizations — links don't show URLs, images aren't handled, etc. */
+}

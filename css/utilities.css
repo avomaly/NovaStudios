@@ -1,0 +1,142 @@
+/* ============================================
+   Nova Studios — Utilities
+   ============================================ */
+
+/* Text alignment */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* Font weight */
+.fw-bold { font-weight: 700; }
+.fw-semibold { font-weight: 600; }
+.fw-normal { font-weight: 400; }
+
+/* Text color */
+.text-white { color: var(--text-white-util); }
+.text-muted { color: var(--text-muted); }
+.text-accent { color: var(--accent-color); }
+/* ISSUE (Advanced): .text-primary defined here AND in global.css (as link color) — cascade confusion */
+.text-primary { color: var(--link-color); }
+.text-dark { color: var(--text-primary); }
+.text-success { color: var(--success); }
+.text-danger { color: var(--danger); }
+
+/* Margins */
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mt-4 { margin-top: 32px; }
+.mt-5 { margin-top: 48px; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+.mb-4 { margin-bottom: 32px; }
+.mb-5 { margin-bottom: 48px; }
+
+.mr-1 { margin-right: 8px; }
+.ml-1 { margin-left: 8px; }
+
+/* Padding */
+.p-0 { padding: 0; }
+.p-1 { padding: 8px; }
+.p-2 { padding: 16px; }
+.p-3 { padding: 24px; }
+.p-4 { padding: 32px; }
+
+/* Display */
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+.d-block { display: block; }
+.d-inline { display: inline; }
+.d-inline-block { display: inline-block; }
+.d-none { display: none; }
+
+/* Flexbox */
+.flex-wrap { flex-wrap: wrap; }
+.align-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-1 { gap: 8px; }
+.gap-2 { gap: 16px; }
+.gap-3 { gap: 24px; }
+.gap-4 { gap: 32px; }
+
+/* Width */
+.w-100 { width: 100%; }
+.max-w-600 { max-width: 600px; }
+.max-w-800 { max-width: 800px; }
+
+/* Border radius */
+.rounded { border-radius: 8px; }
+.rounded-lg { border-radius: 12px; }
+.rounded-full { border-radius: 50%; }
+
+/* Overflow */
+.overflow-hidden { overflow: hidden; }
+
+/* Position */
+.relative { position: relative; }
+.absolute { position: absolute; }
+
+/* Backgrounds */
+.bg-white { background-color: var(--card-bg); }
+.bg-light { background-color: var(--bg-secondary); }
+.bg-dark { background-color: var(--bg-primary-dark-override); }
+
+
+/* Separator */
+.separator {
+    width: 60px;
+    height: 3px;
+    background-color: #f59e0b;
+    margin: 0 auto 24px;
+    border-radius: 2px;
+}
+
+/* Section title with separator */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    margin-bottom: 12px;
+}
+
+.section-title p {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* List unstyled */
+.list-unstyled {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Truncate text */
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* Aspect ratio utilities */
+.aspect-16-9 {
+    aspect-ratio: 16 / 9;
+}
+
+.aspect-4-3 {
+    aspect-ratio: 4 / 3;
+}
+
+.aspect-1-1 {
+    aspect-ratio: 1 / 1;
+}
