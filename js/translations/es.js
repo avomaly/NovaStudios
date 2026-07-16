@@ -2078,6 +2078,8 @@ window.translations.es = {
         "category_fantasy": "Fantasía",
         "category_comedy": "Comedia",
         "category_documentary": "Documental",
+        "category_drama": "Drama",
+        "more_info": "Más información",
         "player_close": "Cerrar reproductor",
         "player_play": "Reproducir",
         "player_pause": "Pausar",

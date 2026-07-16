@@ -241,11 +241,12 @@
                         <button class="filter-pill" data-genre="category_scifi" data-i18n="entertainment_streaming.category_scifi">Sci-Fi</button>
                         <button class="filter-pill" data-genre="category_fantasy" data-i18n="entertainment_streaming.category_fantasy">Fantasy</button>
                         <button class="filter-pill" data-genre="category_comedy" data-i18n="entertainment_streaming.category_comedy">Comedy</button>
+                        <button class="filter-pill" data-genre="category_drama" data-i18n="entertainment_streaming.category_drama">Drama</button>
                         <button class="filter-pill" data-genre="category_documentary" data-i18n="entertainment_streaming.category_documentary">Documentary</button>
                     </div>
                     <div class="catalog-search-wrapper">
                         <i class="fa-solid fa-magnifying-glass catalog-search-icon"></i>
-                        <input type="text" id="catalog-search-input" data-i18n-placeholder="entertainment_streaming.streaming_search_catalog" placeholder="Search Nova+ catalog...">
+                        <input type="text" id="catalog-search-input" class="catalog-search-input" data-i18n-placeholder="entertainment_streaming.streaming_search_catalog" placeholder="Search Nova+ catalog...">
                     </div>
                 </div>
 
@@ -332,7 +333,7 @@
             <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="player-container">
-            <video id="player-video" class="player-video" playsinline></video>
+            <video id="player-video" class="player-video" playsinline loop></video>
             <div class="player-controls-bar">
                 <!-- Seeker Track -->
                 <div id="player-progress-container" class="player-progress-container">

@@ -7,14 +7,14 @@
             url: "entertainment/details/movie-luminara.html"
         },
         {
-            titleKey: "entertainment_details_movie-stellar-horizon.title",
+            titleKey: "entertainment_details_movie-stellar-horizon.stellar_horizon",
             categoryKey: "global_search.search_category_movies",
             url: "entertainment/details/movie-stellar-horizon.html"
         },
         {
-            titleKey: "entertainment_details_movie-the-lost-kingdom.title",
+            titleKey: "entertainment_details_movie-the-last-kingdom.the_last_kingdom",
             categoryKey: "global_search.search_category_movies",
-            url: "entertainment/details/movie-the-lost-kingdom.html"
+            url: "entertainment/details/movie-the-last-kingdom.html"
         },
         {
             titleKey: "entertainment_details_movie-wild-frontier.wild_frontier",

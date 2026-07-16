@@ -16,6 +16,7 @@
             genres: ["category_all", "category_action", "category_scifi"],
             url: "details/movie-stellar-horizon.html",
             videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+            img: "../images/movie-posters/stellar-horizon.png",
             bgClass: "dark"
         },
         {
@@ -27,6 +28,7 @@
             genres: ["category_all", "category_fantasy", "category_action"],
             url: "details/tv-show-chronicles-of-ashenmoor.html",
             videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+            img: "../Asset/chronicals of ashenmoor.png",
             bgClass: "dark"
         },
         {
@@ -38,6 +40,7 @@
             genres: ["category_all", "category_scifi"],
             url: "details/movie-echoes-of-tomorrow.html",
             videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+            img: "../images/gallery/echoes-of-tomorrow.jpg",
             bgClass: "purple"
         },
         {
@@ -49,6 +52,7 @@
             genres: ["category_all", "category_documentary"],
             url: "details/tv-show-wild-planet.html",
             videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+            img: "../Asset/wild planet.png",
             bgClass: "green"
         },
         {
@@ -60,6 +64,7 @@
             genres: ["category_all", "category_scifi"],
             url: "details/tv-show-signal-lost.html",
             videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+            img: "../Asset/signal lost.png",
             bgClass: "blue"
         },
         {
@@ -71,6 +76,7 @@
             genres: ["category_all", "category_drama"],
             url: "details/tv-show-the-golden-hour.html",
             videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+            img: "../Asset/the golden hour.png",
             bgClass: "red"
         },
         {
@@ -82,6 +88,7 @@
             genres: ["category_all", "category_drama"],
             url: "details/tv-show-the-playwright.html",
             videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+            img: "../Asset/the playwright.jpeg",
             bgClass: "dark"
         },
         {
@@ -93,6 +100,7 @@
             genres: ["category_all", "category_comedy"],
             url: "details/tv-show-laugh-track.html",
             videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+            img: "../Asset/the laugh track.jpeg",
             bgClass: "purple"
         }
     ];
@@ -145,26 +153,18 @@
         renderWatchlist();
         renderCatalog();
     }
-
     // 3. UI Rendering logic
     function renderWatchlist() {
         if (!watchlistContainer) return;
 
-        watchlistContainer.classList.remove('hidden');
         watchlistGrid.innerHTML = '';
 
         if (watchlist.length === 0) {
-            watchlistGrid.style.display = 'block';
-            watchlistGrid.innerHTML = `
-                <div class="empty-watchlist-note">
-                    <i class="fa-regular fa-bookmark" style="font-size: 2rem; margin-bottom: 12px; display: block; color: var(--text-muted);"></i>
-                    <p>${translate('entertainment_streaming.empty_watchlist')}</p>
-                </div>
-            `;
+            watchlistContainer.style.display = 'none';
             return;
         }
 
-        watchlistGrid.style.display = 'grid';
+        watchlistContainer.style.display = 'block';
         watchlist.forEach(id => {
             const item = videoCatalog.find(v => v.id === id);
             if (item) {
@@ -211,14 +211,21 @@
         const translatedTitle = translate(item.titleKey);
         const translatedMeta = translate(item.typeKey);
 
+        const mediaHtml = item.img 
+            ? `<img src="${item.img}" alt="${translatedTitle} poster" class="card-img" style="height: 260px; object-fit: cover; width: 100%;">`
+            : `<div class="placeholder-img ${item.bgClass} card-img" style="height: 260px;">${translatedTitle}</div>`;
+
         card.innerHTML = `
-            <div class="placeholder-img ${item.bgClass} card-img" style="height: 260px;">${translatedTitle}</div>
+            ${mediaHtml}
             <div class="card-play-overlay">
                 <div class="play-overlay-icon"><i class="fa-solid fa-play"></i></div>
             </div>
             <div class="card-actions-overlay">
                 <button class="card-action-btn ${inWatchlist ? 'added' : ''}" title="${inWatchlist ? translate('entertainment_streaming.remove_from_watchlist') : translate('entertainment_streaming.add_to_watchlist')}">
                     <i class="${inWatchlist ? 'fa-solid fa-check' : 'fa-solid fa-plus'}"></i>
+                </button>
+                <button class="card-action-btn info-btn" title="${translate('entertainment_streaming.more_info')}">
+                    <i class="fa-solid fa-info"></i>
                 </button>
             </div>
             <div class="card-body">
@@ -237,6 +244,15 @@
             e.stopPropagation();
             toggleWatchlist(item.id);
         });
+
+        // Bind info buttons
+        const infoBtn = card.querySelector('.info-btn');
+        if (infoBtn) {
+            infoBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                window.location.href = item.url;
+            });
+        }
 
         // Make card redirect when title clicked
         const title = card.querySelector('.card-title');
